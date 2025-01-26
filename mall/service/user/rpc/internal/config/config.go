@@ -2,27 +2,19 @@ package config
 
 import (
 	"github.com/zeromicro/go-zero/core/stores/cache"
-	"github.com/zeromicro/go-zero/rest"
 	"github.com/zeromicro/go-zero/zrpc"
 )
 
 type Config struct {
-	RestConf rest.RestConf      `yaml:"RestConf"`
-	RpcConf  zrpc.RpcServerConf `yaml:"RpcServerConf"`
+	RpcServerConf zrpc.RpcServerConf `yaml:",inline"` // 使用 inline 标签来避免与配置文件中的字段冲突
 
 	Mysql struct {
-		DataSource string `yaml:"DataSource"`
+		DataSource string
 	}
 
-	CacheRedis cache.CacheConf `yaml:"CacheRedis"`
-	Salt       string          `yaml:"Salt"`
+	CacheRedis cache.CacheConf
 
-	Auth struct {
-		AccessSecret string `yaml:"AccessSecret"`
-		AccessExpire int64  `yaml:"AccessExpire"`
-	}
-
-	UserRpc zrpc.RpcClientConf `yaml:"UserRpc"`
+	Salt string
 
 	Mode string `yaml:"Mode,default=dev"` // 指定默认值
 
