@@ -14,4 +14,16 @@ type Config struct {
 	}
 
 	UserRpc zrpc.RpcClientConf
+
+	Mysql struct {
+		DataSource string
+	}
+
+	CacheRedis []struct {
+		Host string
+		Pass string
+		Type string
+	}
+
+	Salt string
 }

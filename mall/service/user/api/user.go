@@ -19,6 +19,7 @@ func main() {
 
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
+	fmt.Printf("Loaded config: %+v\n", c)
 
 	server := rest.MustNewServer(c.RestConf)
 	defer server.Stop()
