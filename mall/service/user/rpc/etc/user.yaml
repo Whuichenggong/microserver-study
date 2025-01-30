@@ -1,22 +1,17 @@
 Name: user.rpc
-ListenOn: 0.0.0.0:9000
+ListenOn: 0.0.0.0:9004
 
 Salt: HWVOFkGgPTryzICwd7qnJaZR9KQ2i8xe
 
 Etcd:
   Hosts:
-  - etcd:2379
+  - localhost:2379
   Key: user.rpc
 
 Mysql:
   DataSource: root:123456@tcp(mysql:3306)/mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
 
 CacheRedis:
-    Host: redis-container:6379
+  - Host: redis:6379
     Type: node
     Pass: ""
-
-
-Auth:
-  AccessSecret: "HWVOFkGgPTryzICwd7qnJaZR9KQ2i8xe"
-  AccessExpire: 3600

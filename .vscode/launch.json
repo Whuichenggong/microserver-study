@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "E:\\go-zero-server\\gonivinck\\mall\\service\\user\\api"  // 调试程序的路径（绝对路径）
+        }
+    ]
+}

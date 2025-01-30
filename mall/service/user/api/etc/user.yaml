@@ -1,6 +1,6 @@
 Name: User
 Host: 0.0.0.0
-Port: 8000
+Port: 8004
 
 Salt: HWVOFkGgPTryzICwd7qnJaZR9KQ2i8xe
 
@@ -8,13 +8,9 @@ Mysql:
   DataSource: root:123456@tcp(mysql:3306)/mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
 
 CacheRedis:
-- Host: redis-continer:6379
+- Host: redis:6379
   Pass:
   Type: node
-
-Auth:
-  AccessSecret: uOvKLmVfztaXGpNYd4Z0I1SiT7MweJhl
-  AccessExpire: 86400
 
 UserRpc:
   Etcd:
@@ -24,7 +20,10 @@ UserRpc:
     User: root      # 提供用户名
     Password: secret  # 提供密码
 
-
 RestConf:
   Host: 0.0.0.0
   Port: 8000
+
+Auth:
+  AccessSecret: uOvKLmVfztaXGpNYd4Z0I1SiT7MweJhl
+  AccessExpire: 86400
